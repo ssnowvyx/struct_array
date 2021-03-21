@@ -1,0 +1,98 @@
+using System;
+namespace ssnowvyx
+{
+    struct Check_inSiriHotel
+    {
+        public String size_room;
+        public String view_room;
+
+    }
+    class Program
+    {
+        static void size_room()
+        {
+            Console.WriteLine("You want a room in a room size or nature view.");
+            Check_inSiriHotel [] size = new Check_inSiriHotel [4];
+            size[0].size_room = "Standard";
+            size[1].size_room = "Superior";
+            size[2].size_room = "Deluxe";
+            size[3].size_room = "Suite";
+            Console.WriteLine("{0}",size[0].size_room);
+            Console.WriteLine("{0}",size[1].size_room);
+            Console.WriteLine("{0}",size[2].size_room);
+            Console.WriteLine("{0}",size[3].size_room);
+        }
+        static void view_room()
+        {
+            Console.WriteLine("You want a room in a room size or nature view.");
+            Check_inSiriHotel [] size = new Check_inSiriHotel [4];
+            size[0].view_room = "Gardenview";
+            size[1].view_room = "Seaview";
+            size[2].view_room = "Poolview";
+            size[3].view_room = "PoolAccess";
+            size[4].view_room = "BeachFront";
+            Console.WriteLine("{0}",size[0].view_room);
+            Console.WriteLine("{0}",size[1].view_room);
+            Console.WriteLine("{0}",size[2].view_room);
+            Console.WriteLine("{0}",size[3].view_room);
+            Console.WriteLine("{0}",size[4].view_room);
+        } 
+        static void menu()
+        {
+            Console.WriteLine("menu");
+            Console.WriteLine("size room");
+            Console.WriteLine("view room");
+
+        }
+        static void select()
+        {
+            int a;
+            a = int.Parse(Console.ReadLine());
+            switch (a)
+            {
+                case 1:
+                    Console.WriteLine("I want to stay according to the size.");
+                    size_room();
+                    break;
+                case 2:
+                    Console.WriteLine("I want to stay according to the view.");
+                    view_room();
+                    break;
+                default:
+                Console.WriteLine("There is no design required.");
+                break;
+            }
+        }
+        static void take()
+        {
+            menu();
+            Console.WriteLine("Select menu");
+            select();
+        }
+
+        static void Main(string[] args)
+        {
+                String Firstname;
+                String Lastname;
+                int age,b,c,d;
+                Firstname = Console.ReadLine();
+                Lastname = Console.ReadLine();
+                int.TryParse(Console.ReadLine(),out age);
+                Console.Write("how many people : ");
+                b = int.Parse(Console.ReadLine());
+                Console.Write("how many rent a room : ");
+                c = int.Parse(Console.ReadLine());
+                d = b/c;
+                Console.WriteLine("a room your can live is :  {0}",d);
+                Console.WriteLine("FirstName : {0}",Firstname);
+                Console.WriteLine("LastName : {0}", Lastname);
+                Console.WriteLine(" old is : {0}",age);
+                //
+                DateTime now = DateTime.Now;
+                Console.WriteLine("Check in SiriHotel : {0} ",now);
+                take();
+                //
+                Console.WriteLine("Thank you for using the service");
+        }
+    }
+}
